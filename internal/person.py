@@ -10,7 +10,7 @@ class Knight(Person):
         super().__init__(name, health, armor, weapon)
     def hit(self,enemy):
         if (enemy.armor - self.weapon.power) < 0:
-            damage = (enemy.armor + enemy.health) - self.weapon.power
+            damage = self.weapon.power - enemy.armor
         else:
             damage = 0
         if self.weapon.power >= enemy.armor:
