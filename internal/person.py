@@ -15,5 +15,8 @@ class Knight(Person):
             damage = 0
         if self.weapon.power >= enemy.armor:
             enemy.armor = 0
+        if self.weapon.power <= enemy.armor:
+            enemy.armor = enemy.armor - self.weapon.power
+
         print(f'{self.name} атакует {enemy.name} с оружием {self.weapon.name} \n {enemy.name} получает {damage} урона! Осталось здоровья: {enemy.health - damage}, брони: {enemy.armor}'
             )
